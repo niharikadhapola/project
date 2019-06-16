@@ -1,0 +1,19 @@
+{% extends "user_accounts/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<br>
+  <div class="container">
+    <div class="jumbotron">
+        <h1 style="font-family: Amaranth;"> Profile</h1>
+        {% for person in people_list %}
+            {% if user == person.user %}
+                <p>User Name: {{ person.user }}</p>
+                <p>Address : {{ person.address }}</p>
+                <p>Category: {{ person.category }}</p>
+                <p>Contact number: {{ person.phone }}</p>
+            {% endif %}
+        {% endfor %}
+        <a href="{% url 'profile_update' user.id %}" class="btn btn-info btn-sm">Edit Profile</a>
+
+  </div>
+{% endblock %}

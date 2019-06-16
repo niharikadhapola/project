@@ -1,0 +1,32 @@
+{% extends 'user_accounts/base.html' %}
+
+{% block title %}Login - Sahyog{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="align-content-center" align="center">
+			<br>
+			<div style="border: 1px solid black; width: 600px; height: 300px;">
+				<h1 style="font-family: "Ubuntu">Login here :</h1>
+				<form method="post" >
+					{% csrf_token %}
+					{# A more "HTML" way of creating the login form#}
+					<div class="form-group">
+						<label for="username">Username:</label>
+						<input type="text" name="username" placeholder="Username" id="username">
+					</div>
+					<div class="form-group">
+						<label for="password">Password:</label>
+						<input type="password" name="password" placeholder="Password" id=password>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label" for="radio1">
+							<input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Individual
+						</label>
+					</div><br>
+					<input type="submit" name="" value="Login" class="btn btn-primary btn-lg">
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

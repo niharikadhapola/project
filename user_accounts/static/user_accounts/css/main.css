@@ -1,0 +1,99 @@
+ 
+.e7{
+  width: 70px;
+  height: 70px;
+  margin-top: 0px;
+}
+
+.display-1{
+text-align: center;
+color: white;
+}
+
+._e34{
+display: inline;
+}
+.i34{
+width: 600px;
+height: 350px;
+margin-right: 250px;
+margin-top: 30px;
+}
+._log{
+margin-top: 70px;
+}
+.e55{
+padding-right: 0px;
+padding-left: 0px;
+}
+.e65{
+font-family: Ubuntu;
+text-align: right;
+margin-top: 50px;
+margin-right: 20px;
+}
+footer{
+color:white;
+margin: 20px 0px 0px 0px;
+/*text-align: center;*/
+}
+.e24{
+    font-size: large;
+}
+.foo{
+  background-color: #000066;
+  margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+padding-bottom: 0px;
+width: 100%;
+/*padding: 6px;*/
+}
+.a12{ 
+    width: 100%;
+    height: 500px;
+}
+.sm{
+font-size: x-small;
+margin: 10px;
+}
+.e73{
+margin-top: 100px;
+padding-top: 10px;
+text-align: center;
+}
+.e656{
+display: inline;
+}
+.e77{
+font-size: x-large;
+height: 80px;
+}
+.e46{
+margin-top: 20px;
+/*margin-bottom: : 70px;*/
+text-decoration: none;
+/*font-size: xx-large;*/
+}
+.nav-link:hover{
+background-color: #04074F;
+text-decoration: none;
+/*padding-left: 0px;
+padding-right: 0px;
+margin-left: 0px;*/
+/*height: 20px;
+margin-top: 0px;
+margin-bottom: 0px;*/
+}
+.e90{
+  font-family: "Coiny";
+}
+.flex-container{
+display: flex;
+justify-content: space-around;
+}
+.e24, .e25{
+    text-align: center;
+    font-family: "Amaranth";
+}

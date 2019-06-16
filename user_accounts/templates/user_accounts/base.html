@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static './user_accounts/css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:400,700|Carter+One|Courgette|Cuprum:400,700|Fugaz+One|Merienda:400,700|Oleo+Script:400,700|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Coiny|Josefin+Sans|Libre+Baskerville|Merriweather" rel="stylesheet">
+  </head>
+  <body style="background-image: url(http://www.manjeetgroup.com/images/csr.jpg); background-repeat: no-repeat; background-size: cover">
+    <div class="container e55" style="background-color: white;padding-left: 0px;padding-right: 0px;">
+      <div class="clearfix">
+        <blockquote class="blockquote" align="center">
+          <h1 class="e90 display-3">Sahyog</h1>
+        <footer class="blockquote-footer" style="margin-top: 2px;">Together we grow</footer>
+      </blockquote>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #000066">
+      <a href="#" class="navbar-brand"><img class="img-fluid float-left e7" src="{% static './user_accounts/img/logo.png' %}"></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarcon" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarcon">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item text-white">
+            <a href="{% url 'index' %}" class="nav-link text-white">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link text-white">About</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a href="{% url 'logout' %}" class="nav-link text-white">Logout</a>
+          </li>
+          <li class="nav-item float-right">
+            <a href="{% url 'proposals:post_join' user.id %}" class="nav-link text-white">Create Proposal</a>
+          </li>
+          <li class="nav-item float-right">
+              <a href="{% url 'proposals:post_list' %}" class="nav-link text-white">All proposals</a>
+            </li>
+          <li class="nav-item"><a href="{% url 'proposals:for_user' %}" class="nav-link text-white">Your Proposals</a></li>
+        <li class="nav-item"><a href="/user_accounts/user_profile/" class="nav-link text-white">Your Profile</a></li>
+    
+          {% else %}
+          <li><a href="/user_accounts/register/" class="nav-link text-white">Register</a></li>
+          <li class="nav-item dropdown">
+            <a href="" class="nav-link dropdown-toggle text-white" id="navbardrop" data-toggle="dropdown">Login</a>
+            <div class="dropdown-menu">
+              <a href="/user_accounts/login/" class="dropdown-item">Login for Individual</a>
+              <a href="/user_accounts/complogin/" class="dropdown-item">Login for Company</a>
+            </div>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <br>
+    <div class="container-fluid foo">
+      <footer>
+        <div class="e73 container-fluid">
+          <h6><small><strong>Sahyog</strong></small></h6>
+          <h4 align="center">USEFUL LINKS<hr width=500px class="style"></h4>
+          <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+              <a class="nav-link text-white e26 " href="{% url 'index' %}">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white e26" href="">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white e26" href="">CONTACT US</a>
+            </li>
+          </ul><br>
+        </div>
+        <p align="center">Copyright &copy; Sahyog. All Rights Reserved </p>
+      </div>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

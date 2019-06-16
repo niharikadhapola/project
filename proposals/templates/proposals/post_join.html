@@ -1,0 +1,15 @@
+{% extends 'proposals/post_base.html' %}
+{% block title %}Details of the Proposal - Sahyog{% endblock %}
+{% block post_content %}
+	<div class="container">
+		<p style="font-family: Bitter; font-size: x-large;">Post ID: {{ blog_posts.id}}</p>
+		<p style="font-family: Bitter; font-size: x-large;">Initiative Title: {{ blog_posts.Initiative_Title}}</p>
+		<p style="font-family: Bitter; font-size: x-large;">Budget: {{ blog_posts.budget}}</p>
+		<p style="font-family: Bitter; font-size: x-large;">Requirements: {{ blog_posts.requirements}}</p>
+		{% if user in blog_posts.attendees.all %}
+			<a class="btn btn-danger btn active w-25" href="{% url 'proposals:leave' pk=blog_posts.pk %}">Leave</a>
+		{% else %}
+			<a class="btn btn-success btn active w-25" href="{% url 'proposals:join' pk=blog_posts.pk %}">Join</a>
+		{% endif %}
+	</div>
+{% endblock %}
